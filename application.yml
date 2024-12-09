@@ -1,0 +1,18 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+microservice:
+  flight-availability-service:
+    endpoints:
+      endpoint:
+        uri: http://localhost:8081/availability/check
+  flight-booking-service:
+    endpoints:
+      endpoint:
+        uri: http://localhost:8080/flight/reserve
